@@ -19,7 +19,8 @@ class aliens{
     sf::Texture t2;
     sf::Texture t3;
     sf::Texture t4;
-  
+    int row1=70; int row2; int row3; int row4;
+
    aliens(void){
 
     //  if (!t1.loadFromFile("../media/alien3.png"))
@@ -31,32 +32,34 @@ class aliens{
      load_texture();
 
      set_size(a ,size1);
-     set_size(b, size2);
-    //  set_size(c);
-    //  set_size(d);
+     set_size(b, size1);
+     set_size(c,size1);
+     set_size(d,size1);
 
      set_pos(a,0);
      set_pos(b,50);
-    //  set_pos(c);
-    //  set_pos(d);
+     set_pos(c,100);
+     set_pos(d,150);
+
+  
    }
 
    void load_texture(void){
     
 
-    if (!t1.loadFromFile("../media/alien11.jpg"))
+    if (!t1.loadFromFile("../media/aliens1.png"))
       std::cout << "fail\n";
-    if (!t2.loadFromFile("../media/alien3.png"))
+    if (!t2.loadFromFile("../media/aliens2.png"))
       std::cout << "fail\n";
-    if (!t3.loadFromFile("../media/alien2.png"))
+    if (!t3.loadFromFile("../media/aliens3.png"))
       std::cout << "fail\n";
-    if (!t4.loadFromFile("../media/alien4.png"))
+    if (!t4.loadFromFile("../media/aliens4.png"))
       std::cout << "fail\n";
 
     set_sprite(a, t1);
     set_sprite(b, t2);
-    // set_sprite(c, t3);
-    // set_sprite(d, t4);
+    set_sprite(c, t3);
+    set_sprite(d, t4);
    }
 
    void set_sprite(vector<sf::Sprite>& x, sf::Texture& t){
@@ -74,8 +77,8 @@ class aliens{
     // sprite.setPosition(sf::Vector2f(50, 100));
     int aux=0;;
     for(int i=0; i<10; i++){
-      x[i].setPosition(sf::Vector2f(50+aux, 100+row)); 
-      aux+=50;
+      x[i].setPosition(sf::Vector2f(70+aux, 70+row)); 
+      aux+=45;
     }
   }
 
